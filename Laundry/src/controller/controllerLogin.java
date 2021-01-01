@@ -27,6 +27,7 @@ public class controllerLogin {
             mL.setUsername(vL.getUsernameView().getText());
             mL.setPassword(String.valueOf(vL.getPasswordView().getPassword()));
             mL.ambilData();
+            
             if (mL.getPassword().equals("")){
                 vL.setPasswordView("");
             }

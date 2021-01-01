@@ -49,7 +49,7 @@
                                   <Component id="namaRegisterView" max="32767" attributes="0"/>
                                   <Component id="jScrollPane1" max="32767" attributes="0"/>
                                   <Component id="passwordRegisterView" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="rePasswordRegisterView" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="rePasswordRegisterVieww" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -84,12 +84,12 @@
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="passwordRegisterView" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="rePasswordRegisterView" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rePasswordRegisterVieww" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Component id="submitRegisterView" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
           </Group>
@@ -149,14 +149,17 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="passwordRegisterView">
-    </Component>
-    <Component class="javax.swing.JTextField" name="rePasswordRegisterView">
-    </Component>
     <Component class="javax.swing.JButton" name="submitRegisterView">
       <Properties>
         <Property name="text" type="java.lang.String" value="Submit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitRegisterViewActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="passwordRegisterView">
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="rePasswordRegisterVieww">
     </Component>
   </SubComponents>
 </Form>

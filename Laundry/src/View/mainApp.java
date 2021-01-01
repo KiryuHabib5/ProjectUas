@@ -83,14 +83,14 @@ public class mainApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         viewLogin vL = new viewLogin();
         vL.setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_loginMainAppViewActionPerformed
 
     private void registerMainAppViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerMainAppViewActionPerformed
         // TODO add your handling code here:
         registerView rV = new registerView();
         rV.setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_registerMainAppViewActionPerformed
 
     /**

@@ -5,17 +5,25 @@
  */
 package View;
 
+import controller.controllerRegister;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author WIN10
  */
 public class registerView extends javax.swing.JFrame {
-
+    controllerRegister cR;
+    viewLogin vL;
     /**
      * Creates new form registerView
      */
     public registerView() {
         initComponents();
+        cR = new controllerRegister(this);
     }
 
     /**
@@ -37,9 +45,9 @@ public class registerView extends javax.swing.JFrame {
         namaRegisterView = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         alamatRegisterView = new javax.swing.JTextArea();
-        passwordRegisterView = new javax.swing.JTextField();
-        rePasswordRegisterView = new javax.swing.JTextField();
         submitRegisterView = new javax.swing.JButton();
+        passwordRegisterView = new javax.swing.JPasswordField();
+        rePasswordRegisterVieww = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,6 +74,11 @@ public class registerView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(alamatRegisterView);
 
         submitRegisterView.setText("Submit");
+        submitRegisterView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitRegisterViewActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,7 +107,7 @@ public class registerView extends javax.swing.JFrame {
                                     .addComponent(namaRegisterView)
                                     .addComponent(jScrollPane1)
                                     .addComponent(passwordRegisterView)
-                                    .addComponent(rePasswordRegisterView))))))
+                                    .addComponent(rePasswordRegisterVieww))))))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -118,11 +131,11 @@ public class registerView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(passwordRegisterView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(rePasswordRegisterView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(rePasswordRegisterVieww, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addComponent(submitRegisterView)
                 .addGap(52, 52, 52))
         );
@@ -133,6 +146,16 @@ public class registerView extends javax.swing.JFrame {
     private void namaRegisterViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaRegisterViewActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_namaRegisterViewActionPerformed
+
+    private void submitRegisterViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitRegisterViewActionPerformed
+        // TODO add your handling code here:
+        cR.register();        
+        if(cR.status.equals("sukses")){
+            vL = new viewLogin();
+            vL.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_submitRegisterViewActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +192,56 @@ public class registerView extends javax.swing.JFrame {
         });
     }
 
+    public JTextArea getAlamatRegisterView() {
+        return alamatRegisterView;
+    }
+
+    public void setAlamatRegisterView(JTextArea alamatRegisterView) {
+        this.alamatRegisterView = alamatRegisterView;
+    }
+
+    public JTextField getNamaRegisterView() {
+        return namaRegisterView;
+    }
+
+    public void setNamaRegisterView(JTextField namaRegisterView) {
+        this.namaRegisterView = namaRegisterView;
+    }
+
+    public JPasswordField getPasswordRegisterView() {
+        return passwordRegisterView;
+    }
+
+    public void setPasswordRegisterView(String passwordRegisterView) {
+        this.passwordRegisterView.setText(passwordRegisterView);
+    }
+
+    public JPasswordField getRePasswordRegisterVieww() {
+        return rePasswordRegisterVieww;
+    }
+
+    public void setRePasswordRegisterVieww(String rePasswordRegisterVieww) {
+        this.rePasswordRegisterVieww.setText(rePasswordRegisterVieww);
+    }
+
+    public JButton getSubmitRegisterView() {
+        return submitRegisterView;
+    }
+
+    public void setSubmitRegisterView(JButton submitRegisterView) {
+        this.submitRegisterView = submitRegisterView;
+    }
+
+    public JTextField getUsernameRegisterView() {
+        return usernameRegisterView;
+    }
+
+    public void setUsernameRegisterView(JTextField usernameRegisterView) {
+        this.usernameRegisterView = usernameRegisterView;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea alamatRegisterView;
     private javax.swing.JLabel jLabel1;
@@ -179,8 +252,8 @@ public class registerView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField namaRegisterView;
-    private javax.swing.JTextField passwordRegisterView;
-    private javax.swing.JTextField rePasswordRegisterView;
+    private javax.swing.JPasswordField passwordRegisterView;
+    private javax.swing.JPasswordField rePasswordRegisterVieww;
     private javax.swing.JButton submitRegisterView;
     private javax.swing.JTextField usernameRegisterView;
     // End of variables declaration//GEN-END:variables

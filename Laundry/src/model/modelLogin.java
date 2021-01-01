@@ -50,12 +50,32 @@ public class modelLogin {
                 }
                 
             }else{
-                JOptionPane.showConfirmDialog(null, "USER TIDAK DITEMUNKAN");
+                // JOptionPane.showConfirmDialog(null, "USER TIDAK DITEMUNKAN");
+                String Sql2 = "SELECT * FROM user WHERE username='"+getUsername()+"'";
+                try {
+                    ResultSet res2 = stat.executeQuery(Sql2);
+                    if (res2.next()) {
+                        if(getPassword().equals(res2.getString("password"))){                    
+                            JOptionPane.showConfirmDialog(null, "Login Berhasil");
+                        }else{                    
+                            JOptionPane.showConfirmDialog(null, "Password Salah!!"); 
+                            setPassword("");
+                        } 
+                    }else{
+                        JOptionPane.showConfirmDialog(null, "USER TIDAK DITEMUNKAN");
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showConfirmDialog(null, e);
+                }
             }
             
         }
         catch(Exception e){
             JOptionPane.showConfirmDialog(null, e);
+            
         }
     }
+    
+    
+    
 }
