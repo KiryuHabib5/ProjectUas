@@ -5,6 +5,8 @@
  */
 package laundry;
 
+import View.mainApp;
+
 /**
  *
  * @author WIN10
@@ -16,6 +18,8 @@ public class Laundry {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        mainApp mA = new mainApp();
+        mA.setVisible(true);
     }
     
 }
