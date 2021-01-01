@@ -5,17 +5,23 @@
  */
 package View;
 
+import controller.controllerLogin;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author WIN10
  */
 public class viewLogin extends javax.swing.JFrame {
-
+    controllerLogin cL;
     /**
      * Creates new form viewLogin
      */
     public viewLogin() {
         initComponents();
+        cL =  new controllerLogin(this);
     }
 
     /**
@@ -54,6 +60,11 @@ public class viewLogin extends javax.swing.JFrame {
         });
 
         loginView.setText("Login");
+        loginView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginViewActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,6 +114,11 @@ public class viewLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameViewActionPerformed
 
+    private void loginViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginViewActionPerformed
+        // TODO add your handling code here:
+        cL.login();
+    }//GEN-LAST:event_loginViewActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -137,6 +153,25 @@ public class viewLogin extends javax.swing.JFrame {
             }
         });
     }
+
+    public JButton getLoginView() {
+        return loginView;
+    }
+
+    public JPasswordField getPasswordView() {
+        return passwordView;
+    }
+
+    public JTextField getUsernameView() {
+        return usernameView;
+    }
+
+    public void setPasswordView(String passwordView) {
+        this.passwordView.setText(passwordView);
+    }
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JEditorPane jEditorPane1;
