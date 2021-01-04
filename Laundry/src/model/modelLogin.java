@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 public class modelLogin {
     private String username;
     private String password;
+    private String level;
 
     public String getUsername() {
         return username;
@@ -36,25 +37,37 @@ public class modelLogin {
         this.password = password;
     }
 
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    
+    
     public void ambilData(){
         String Sql = "SELECT * FROM admin WHERE username='"+getUsername()+"'";
         try {
             Statement stat = (Statement) KoneksiDatabase.getKoneksi().createStatement();
             ResultSet res = stat.executeQuery(Sql);
             if(res.next()){
+                this.setLevel("admin");
                 if(getPassword().equals(res.getString("password"))){                    
                     JOptionPane.showConfirmDialog(null, "Login Berhasil");
                 }else{                    
                     JOptionPane.showConfirmDialog(null, "Password Salah!!"); 
                     setPassword("");
                 }
-                
+                       
             }else{
                 // JOptionPane.showConfirmDialog(null, "USER TIDAK DITEMUNKAN");
                 String Sql2 = "SELECT * FROM user WHERE username='"+getUsername()+"'";
                 try {
                     ResultSet res2 = stat.executeQuery(Sql2);
                     if (res2.next()) {
+                        this.setLevel("user");
                         if(getPassword().equals(res2.getString("password"))){                    
                             JOptionPane.showConfirmDialog(null, "Login Berhasil");
                         }else{                    

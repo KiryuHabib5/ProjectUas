@@ -27,7 +27,7 @@ public class controllerLogin {
             mL.setUsername(vL.getUsernameView().getText());
             mL.setPassword(String.valueOf(vL.getPasswordView().getPassword()));
             mL.ambilData();
-            
+            JOptionPane.showConfirmDialog(null, mL.getLevel());
             if (mL.getPassword().equals("")){
                 vL.setPasswordView("");
             }
