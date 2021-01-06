@@ -5,12 +5,24 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author WIN10
  */
 public class userView extends javax.swing.JFrame {
+    private String username;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    
     /**
      * Creates new form userView
      */
@@ -88,11 +100,17 @@ public class userView extends javax.swing.JFrame {
         // TODO add your handling code here:
         pesanView pV = new pesanView();
         pV.setVisible(true);
+        pV.setUsername(this.getUsername());        
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        statusView sV = new statusView();
+        sV.setUsername(this.getUsername());
+        sV.tampilData();
+        sV.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

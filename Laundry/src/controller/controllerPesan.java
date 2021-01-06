@@ -24,6 +24,7 @@ public class controllerPesan {
         try {
             mP = new modelPesan();
             mP.setEstimasiBerat(Integer.parseInt(vP.getBeratPesanView().getText()));
+            mP.setUsername(vP.getUsername());
             if (vP.getKategoriNormalPesanView().isSelected()) {
                 mP.setKategori("Normal");
             }else if (vP.getKategoriExpertPesanView().isSelected()){

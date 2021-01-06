@@ -7,6 +7,7 @@ package View;
 
 import controller.controllerPesan;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -17,12 +18,24 @@ import javax.swing.JTextField;
  */
 public class pesanView extends javax.swing.JFrame {
     private controllerPesan cP;
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    
     /**
      * Creates new form pesanView
      */
     public pesanView() {
         initComponents();
         cP = new controllerPesan(this);
+        //JOptionPane.showConfirmDialog(this, this.getUsername());
     }
 
     /**
@@ -53,7 +66,7 @@ public class pesanView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pesan kurir");
 
-        jLabel1.setText("Estimasi berat ");
+        jLabel1.setText("Estimasi berat (kg) ");
 
         jLabel2.setText("Alamat lengkap");
 
@@ -120,7 +133,7 @@ public class pesanView extends javax.swing.JFrame {
                                 .addGap(42, 42, 42)
                                 .addComponent(SabunBubukPesanView))
                             .addComponent(jScrollPane1))))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,6 +178,9 @@ public class pesanView extends javax.swing.JFrame {
     private void konfirmPesanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_konfirmPesanButtonActionPerformed
         // TODO add your handling code here:
         cP.konfirmmasi();
+        this.dispose();
+        userView uV = new userView();
+        uV.setVisible(true);
     }//GEN-LAST:event_konfirmPesanButtonActionPerformed
 
     /**

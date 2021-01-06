@@ -15,11 +15,22 @@ import javax.swing.JOptionPane;
  */
 public class modelPesan {
     private int estimasiBerat;
+    private String username;
     private String kategori;
     private String jenisSabun;
     private String alamat;
+    private String status;
     private KoneksiDatabase koneksi;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+        
     public int getEstimasiBerat() {
         return estimasiBerat;
     }
@@ -51,11 +62,30 @@ public class modelPesan {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public KoneksiDatabase getKoneksi() {
+        return koneksi;
+    }
+
+    public void setKoneksi(KoneksiDatabase koneksi) {
+        this.koneksi = koneksi;
+    }
+    
+    
     
     
     public void konfirm(){
-        String Sql = "INSERT INTO pesan (estimasiBerat, kategori, jenisSabun, alamat) VALUES ('"+getEstimasiBerat()+"','"+getKategori()+"','"+getJenisSabun()+"','"+getAlamat()+"')";
-        
+        this.setStatus("Menunggu Konfirmasi");
+        String Sql = "INSERT INTO pesan (username, estimasiBerat, kategori, jenisSabun, alamat, status) VALUES ('"+getUsername()+"','"+getEstimasiBerat()+"','"+getKategori()+"','"+getJenisSabun()+"','"+getAlamat()+"', '"+getStatus()+"')";
+        //JOptionPane.showMessageDialog(null,Sql);
         try {
             PreparedStatement eksekusi = koneksi.getKoneksi().prepareStatement(Sql);
             eksekusi.execute();
@@ -63,6 +93,8 @@ public class modelPesan {
             JOptionPane.showMessageDialog(null, "Data Berasil disimpan");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Data Tidak Berasil disimpan");
+            JOptionPane.showMessageDialog(null, e);
         }
     }
+    
 }

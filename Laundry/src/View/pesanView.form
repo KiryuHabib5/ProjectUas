@@ -60,7 +60,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="43" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -104,7 +104,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Estimasi berat "/>
+        <Property name="text" type="java.lang.String" value="Estimasi berat (kg) "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">

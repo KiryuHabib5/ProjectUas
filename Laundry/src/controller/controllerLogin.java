@@ -6,6 +6,7 @@
 package controller;
 
 import View.pesanView;
+import View.userView;
 import View.viewLogin;
 import javax.swing.JOptionPane;
 import model.modelLogin;
@@ -28,8 +29,9 @@ public class controllerLogin {
             mL = new modelLogin();
             mL.setUsername(vL.getUsernameView().getText());
             mL.setPassword(String.valueOf(vL.getPasswordView().getPassword()));
+            //vL.setUsername(mL.getUsername());
             mL.ambilData();
-            //JOptionPane.showConfirmDialog(null, mL.getLevel());
+            //JOptionPane.showConfirmDialog(null, mL.getUsername());
             if (mL.getPassword().equals("")){
                 vL.setPasswordView("");
             }
@@ -37,10 +39,12 @@ public class controllerLogin {
             if (mL.getLevel().equalsIgnoreCase("admin")) {
                 
             }else if(mL.getLevel().equalsIgnoreCase("user")){
-                pesanView pV = new pesanView();
-                pV.setVisible(true);
+                userView uV = new userView();
+                uV.setUsername(mL.getUsername());
+                uV.setVisible(true);
                 this.vL.dispose();
             }
+            
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
         }
