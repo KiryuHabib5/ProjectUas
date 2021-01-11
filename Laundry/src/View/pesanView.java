@@ -62,6 +62,7 @@ public class pesanView extends javax.swing.JFrame {
         sabunCairPesanView = new javax.swing.JRadioButton();
         SabunBubukPesanView = new javax.swing.JRadioButton();
         konfirmPesanButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pesan kurir");
@@ -105,6 +106,13 @@ public class pesanView extends javax.swing.JFrame {
             }
         });
 
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,7 +120,10 @@ public class pesanView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(konfirmPesanButton)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(konfirmPesanButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -160,7 +171,9 @@ public class pesanView extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(konfirmPesanButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(konfirmPesanButton)
+                    .addComponent(backButton))
                 .addContainerGap())
         );
 
@@ -178,10 +191,19 @@ public class pesanView extends javax.swing.JFrame {
     private void konfirmPesanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_konfirmPesanButtonActionPerformed
         // TODO add your handling code here:
         cP.konfirmmasi();
+        userView uV = new userView();
+        uV.setUsername(this.getUsername());
+        uV.setVisible(true);
         this.dispose();
+    }//GEN-LAST:event_konfirmPesanButtonActionPerformed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
         userView uV = new userView();
         uV.setVisible(true);
-    }//GEN-LAST:event_konfirmPesanButtonActionPerformed
+        uV.setUsername(this.getUsername());
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,6 +283,7 @@ public class pesanView extends javax.swing.JFrame {
     private javax.swing.JTextArea AlamatPesanView;
     private javax.swing.JRadioButton KategoriNormalPesanView;
     private javax.swing.JRadioButton SabunBubukPesanView;
+    private javax.swing.JButton backButton;
     private javax.swing.JTextField beratPesanView;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;

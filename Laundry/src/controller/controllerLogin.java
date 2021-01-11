@@ -5,6 +5,7 @@
  */
 package controller;
 
+import View.adminView;
 import View.pesanView;
 import View.userView;
 import View.viewLogin;
@@ -37,7 +38,9 @@ public class controllerLogin {
             }
             
             if (mL.getLevel().equalsIgnoreCase("admin")) {
-                
+                adminView aV = new adminView();
+                aV.setVisible(true);
+                this.vL.dispose();
             }else if(mL.getLevel().equalsIgnoreCase("user")){
                 userView uV = new userView();
                 uV.setUsername(mL.getUsername());

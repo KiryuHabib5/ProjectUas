@@ -7,6 +7,9 @@ package model;
 
 import database.KoneksiDatabase;
 import java.sql.PreparedStatement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,7 +23,15 @@ public class modelPesan {
     private String jenisSabun;
     private String alamat;
     private String status;
+    private String tanggal;
     private KoneksiDatabase koneksi;
+    
+    private String getTanggal(){
+        DateFormat dateFormat1 = new SimpleDateFormat("yyyy-MMd-dd");
+        Date date = new Date();        
+        this.tanggal = dateFormat1.format(date);
+        return this.tanggal;
+    }
 
     public String getUsername() {
         return username;
@@ -84,7 +95,7 @@ public class modelPesan {
     
     public void konfirm(){
         this.setStatus("Menunggu Konfirmasi");
-        String Sql = "INSERT INTO pesan (username, estimasiBerat, kategori, jenisSabun, alamat, status) VALUES ('"+getUsername()+"','"+getEstimasiBerat()+"','"+getKategori()+"','"+getJenisSabun()+"','"+getAlamat()+"', '"+getStatus()+"')";
+        String Sql = "INSERT INTO pesan (username, estimasiBerat, kategori, jenisSabun, alamat,tanggal, status) VALUES ('"+getUsername()+"','"+getEstimasiBerat()+"','"+getKategori()+"','"+getJenisSabun()+"','"+getAlamat()+"','"+getTanggal()+"' , '"+getStatus()+"')";
         //JOptionPane.showMessageDialog(null,Sql);
         try {
             PreparedStatement eksekusi = koneksi.getKoneksi().prepareStatement(Sql);

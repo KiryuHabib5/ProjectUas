@@ -53,8 +53,9 @@ public class modelLogin {
             Statement stat = (Statement) KoneksiDatabase.getKoneksi().createStatement();
             ResultSet res = stat.executeQuery(Sql);
             if(res.next()){
-                this.setLevel("admin");
-                if(getPassword().equals(res.getString("password"))){                    
+                
+                if(getPassword().equals(res.getString("password"))){      
+                    this.setLevel("admin");
                     JOptionPane.showConfirmDialog(null, "Login Berhasil");
                 }else{                    
                     JOptionPane.showConfirmDialog(null, "Password Salah!!"); 
@@ -67,8 +68,9 @@ public class modelLogin {
                 try {
                     ResultSet res2 = stat.executeQuery(Sql2);
                     if (res2.next()) {
-                        this.setLevel("user");
-                        if(getPassword().equals(res2.getString("password"))){                    
+                        
+                        if(getPassword().equals(res2.getString("password"))){
+                            this.setLevel("user");
                             JOptionPane.showConfirmDialog(null, "Login Berhasil");
                         }else{                    
                             JOptionPane.showConfirmDialog(null, "Password Salah!!"); 
