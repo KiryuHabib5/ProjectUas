@@ -405,7 +405,7 @@ public class detailPesanan extends javax.swing.JFrame {
     }
     
     public void editableKondition(){
-        JOptionPane.showConfirmDialog(null, "Level : "+this.getLevel());
+        //JOptionPane.showConfirmDialog(null, "Level : "+this.getLevel());
         if (this.getLevel().equalsIgnoreCase("admin")){
             idDetail.setEditable(false);
             usernameDetail.setEditable(false);

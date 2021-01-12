@@ -3,11 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Legion%20Y545/Desktop/ProjectUas-master_4/ProjectUas-master/Laundry/src/database/KoneksiDatabase.java</file>
-            <file>file:/C:/Users/Legion%20Y545/Desktop/ProjectUas-master_4/ProjectUas-master/Laundry/src/View/adminView.java</file>
-            <file>file:/C:/Users/Legion%20Y545/Desktop/ProjectUas-master_4/ProjectUas-master/Laundry/src/controller/controllerDetail.java</file>
-            <file>file:/C:/Users/Legion%20Y545/Desktop/ProjectUas-master_4/ProjectUas-master/Laundry/src/View/detailPesanan.java</file>
-            <file>file:/C:/Users/Legion%20Y545/Desktop/ProjectUas-master_4/ProjectUas-master/Laundry/src/View/registerView.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/model/modelLogin.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/View/AboutViem.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/View/adminView.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/controller/controllerLogin.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/database/KoneksiDatabase.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/View/detailPesanan.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/View/statusView.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/controller/controllerPesan.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/View/userView.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/controller/controllerDetail.java</file>
+            <file>file:/D:/Pemrograman/Java/ProjectUas/Laundry/src/model/modelDetail.java</file>
         </group>
     </open-files>
 </project-private>
