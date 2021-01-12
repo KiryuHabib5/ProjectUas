@@ -49,55 +49,35 @@ public class pesanView extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        beratPesanView = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        AlamatPesanView = new javax.swing.JTextArea();
-        KategoriNormalPesanView = new javax.swing.JRadioButton();
-        kategoriExpertPesanView = new javax.swing.JRadioButton();
-        kategoriVeryExpertPesanView = new javax.swing.JRadioButton();
+        jPanel1 = new javax.swing.JPanel();
         sabunCairPesanView = new javax.swing.JRadioButton();
-        SabunBubukPesanView = new javax.swing.JRadioButton();
         konfirmPesanButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        AlamatPesanView = new javax.swing.JTextArea();
+        kategoriVeryExpertPesanView = new javax.swing.JRadioButton();
+        kategoriExpertPesanView = new javax.swing.JRadioButton();
+        beratPesanView = new javax.swing.JTextField();
+        KategoriNormalPesanView = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        SabunBubukPesanView = new javax.swing.JRadioButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pesan kurir");
 
-        jLabel1.setText("Estimasi berat (kg) ");
+        jPanel1.setBackground(new java.awt.Color(0, 204, 255));
 
-        jLabel2.setText("Alamat lengkap");
-
-        jLabel3.setText("Jenis Sabun");
-
-        jLabel4.setText("Kategori");
-
-        AlamatPesanView.setColumns(20);
-        AlamatPesanView.setRows(5);
-        jScrollPane1.setViewportView(AlamatPesanView);
-
-        KategoriNormalPesanView.setText("Normal");
-
-        kategoriExpertPesanView.setText("Expert");
-
-        kategoriVeryExpertPesanView.setText("Very Expert");
-        kategoriVeryExpertPesanView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kategoriVeryExpertPesanViewActionPerformed(evt);
-            }
-        });
-
+        sabunCairPesanView.setBackground(new java.awt.Color(0, 204, 255));
         sabunCairPesanView.setText("Cair");
         sabunCairPesanView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sabunCairPesanViewActionPerformed(evt);
             }
         });
-
-        SabunBubukPesanView.setText("Bubuk");
 
         konfirmPesanButton.setText("Konfirm");
         konfirmPesanButton.addActionListener(new java.awt.event.ActionListener() {
@@ -113,68 +93,118 @@ public class pesanView extends javax.swing.JFrame {
             }
         });
 
+        AlamatPesanView.setColumns(20);
+        AlamatPesanView.setRows(5);
+        jScrollPane1.setViewportView(AlamatPesanView);
+
+        kategoriVeryExpertPesanView.setBackground(new java.awt.Color(0, 204, 255));
+        kategoriVeryExpertPesanView.setText("Very Expert");
+        kategoriVeryExpertPesanView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kategoriVeryExpertPesanViewActionPerformed(evt);
+            }
+        });
+
+        kategoriExpertPesanView.setBackground(new java.awt.Color(0, 204, 255));
+        kategoriExpertPesanView.setText("Expert");
+
+        KategoriNormalPesanView.setBackground(new java.awt.Color(0, 204, 255));
+        KategoriNormalPesanView.setText("Normal");
+
+        jLabel3.setText("Jenis Sabun");
+
+        jLabel1.setText("Estimasi berat (kg) ");
+
+        jLabel4.setText("Kategori");
+
+        jLabel2.setText("Alamat lengkap");
+
+        SabunBubukPesanView.setBackground(new java.awt.Color(0, 204, 255));
+        SabunBubukPesanView.setText("Bubuk");
+
+        jLabel6.setText("Pesan");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(konfirmPesanButton))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel3))
+                            .addGap(31, 31, 31)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(KategoriNormalPesanView)
+                                            .addComponent(sabunCairPesanView))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(SabunBubukPesanView)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(kategoriExpertPesanView)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(kategoriVeryExpertPesanView)))))
+                                .addComponent(beratPesanView, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel6)))
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel6)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(beratPesanView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(KategoriNormalPesanView)
+                        .addComponent(kategoriExpertPesanView)
+                        .addComponent(kategoriVeryExpertPesanView)))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(sabunCairPesanView)
+                        .addComponent(SabunBubukPesanView)))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backButton)
+                    .addComponent(konfirmPesanButton))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(backButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(konfirmPesanButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(KategoriNormalPesanView)
-                                .addGap(18, 18, 18)
-                                .addComponent(kategoriExpertPesanView)
-                                .addGap(18, 18, 18)
-                                .addComponent(kategoriVeryExpertPesanView))
-                            .addComponent(beratPesanView)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(sabunCairPesanView)
-                                .addGap(42, 42, 42)
-                                .addComponent(SabunBubukPesanView))
-                            .addComponent(jScrollPane1))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(beratPesanView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(KategoriNormalPesanView)
-                        .addComponent(kategoriExpertPesanView)
-                        .addComponent(kategoriVeryExpertPesanView)))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(sabunCairPesanView)
-                        .addComponent(SabunBubukPesanView)))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(konfirmPesanButton)
-                    .addComponent(backButton))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -291,6 +321,8 @@ public class pesanView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton kategoriExpertPesanView;
     private javax.swing.JRadioButton kategoriVeryExpertPesanView;

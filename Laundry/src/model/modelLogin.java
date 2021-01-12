@@ -80,13 +80,13 @@ public class modelLogin {
                         JOptionPane.showConfirmDialog(null, "USER TIDAK DITEMUNKAN");
                     }
                 } catch (Exception e) {
-                    JOptionPane.showConfirmDialog(null, e);
+                    //JOptionPane.showConfirmDialog(null, e);
                 }
             }
             
         }
         catch(Exception e){
-            JOptionPane.showConfirmDialog(null, e);
+            //JOptionPane.showConfirmDialog(null, e);
             
         }
     }

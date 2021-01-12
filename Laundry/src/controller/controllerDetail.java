@@ -27,6 +27,7 @@ public class controllerDetail {
         mD.setEstimasiBerat(Integer.parseInt(dP.getEstimasiDetail().getText()));
         mD.setKategori(dP.getKategoriDetail().getText());
         mD.setJenisSabun(dP.getJenisSabunDetail().getText());
+        mD.setAlamat(dP.getAlamatDetail().getText());
         mD.setStatus(dP.getStatusDetail().getText());
         mD.konfirm();
     }

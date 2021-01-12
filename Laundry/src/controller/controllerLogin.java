@@ -40,16 +40,18 @@ public class controllerLogin {
             if (mL.getLevel().equalsIgnoreCase("admin")) {
                 adminView aV = new adminView();
                 aV.setVisible(true);
+                aV.setLevel("admin");
                 this.vL.dispose();
             }else if(mL.getLevel().equalsIgnoreCase("user")){
                 userView uV = new userView();
                 uV.setUsername(mL.getUsername());
                 uV.setVisible(true);
+                uV.setLevel("user");
                 this.vL.dispose();
             }
             
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, e);
+            //JOptionPane.showConfirmDialog(null, e);
         }
     }
 }
