@@ -177,6 +177,7 @@ public class userView extends javax.swing.JFrame {
         statusView sV = new statusView(this);
         sV.setUsername(this.getUsername());
         sV.tampilData();
+        sV.setLevel(this.getLevel());
         sV.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed

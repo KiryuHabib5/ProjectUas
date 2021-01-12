@@ -40,6 +40,7 @@ public class controllerLogin {
             if (mL.getLevel().equalsIgnoreCase("admin")) {
                 adminView aV = new adminView();
                 aV.setVisible(true);
+                aV.setUsername(mL.getUsername());
                 aV.setLevel("admin");
                 this.vL.dispose();
             }else if(mL.getLevel().equalsIgnoreCase("user")){

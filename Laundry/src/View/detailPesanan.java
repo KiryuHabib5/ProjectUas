@@ -7,6 +7,7 @@ package View;
 
 import controller.controllerDetail;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -15,10 +16,19 @@ import javax.swing.JTextField;
  * @author WIN10
  */
 public class detailPesanan extends javax.swing.JFrame {
-    private static adminView aV;
+    private adminView aV = new adminView();
     private controllerDetail cD;
     private String level;
+    private String username;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
     public String getLevel() {
         return level;
     }
@@ -28,12 +38,27 @@ public class detailPesanan extends javax.swing.JFrame {
     }
     
     
+    
     /**
      * Creates new form detailPesanan
      */
-    public detailPesanan(adminView aV) {
+//    public detailPesanan(adminView aV) {
+//        initComponents();
+//        this.aV = aV;
+//    }
+    public detailPesanan() {
         initComponents();
-        this.aV = aV;
+//        JOptionPane.showConfirmDialog(null, this.getLevel());
+//        if (this.getLevel().equalsIgnoreCase("admin")){
+//            idDetail.setEditable(false);
+//            usernameDetail.setEditable(false);
+//            estimasiDetail.setEditable(false);
+//            kategoriDetail.setEditable(false);
+//            jenisSabunDetail.setEditable(false);
+//            alamatDetail.setEditable(false);
+//        }else if (this.getLevel().equalsIgnoreCase("user")){
+//            statusDetail.setEditable(false);
+//        }
     }
 
     /**
@@ -92,7 +117,6 @@ public class detailPesanan extends javax.swing.JFrame {
 
         jLabel7.setText("Status");
 
-        alamatDetail.setEditable(false);
         alamatDetail.setColumns(20);
         alamatDetail.setRows(5);
         jScrollPane1.setViewportView(alamatDetail);
@@ -109,16 +133,7 @@ public class detailPesanan extends javax.swing.JFrame {
 
         jLabel1.setText("ID");
 
-        idDetail.setEditable(false);
         idDetail.setEnabled(false);
-
-        usernameDetail.setEditable(false);
-
-        estimasiDetail.setEditable(false);
-
-        kategoriDetail.setEditable(false);
-
-        jenisSabunDetail.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -220,23 +235,73 @@ public class detailPesanan extends javax.swing.JFrame {
 
     private void backDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backDetailActionPerformed
         // TODO add your handling code here:
+//        aV.tampilData();
+//        aV.setUsername(this.getUsername());
+//        aV.setVisible(true);
+//        this.dispose();
+        
+        if(this.getLevel().equalsIgnoreCase("admin")){
+            aV.tampilData();
+            aV.setUsername(this.getUsername());
+            aV.setLevel("admin");
+            aV.setVisible(true);
+            
+        }else if(this.getLevel().equalsIgnoreCase("user")){
+            userView uV = new userView();
+            uV.setUsername(this.getUsername());
+            uV.setLevel("user");
+            uV.setVisible(true);            
+        }
         this.dispose();
     }//GEN-LAST:event_backDetailActionPerformed
 
     private void konfirmDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_konfirmDetailActionPerformed
         // TODO add your handling code here:
-        cD = new controllerDetail(this);
-        cD.konfirmasi();
-        aV.tampilData();
+//        cD = new controllerDetail(this);
+//        cD.konfirmasi();
+//        aV.tampilData();
+//        aV.setUsername(this.getUsername());
+//        aV.setVisible(true);
+//        this.dispose();
+        
+        if(this.getLevel().equalsIgnoreCase("admin")){
+            cD = new controllerDetail(this);
+            cD.konfirmasi();
+            aV.tampilData();
+            aV.setUsername(this.getUsername());
+            aV.setLevel("admin");
+            aV.setVisible(true);
+            
+        }else if(this.getLevel().equalsIgnoreCase("user")){
+            cD = new controllerDetail(this);
+            cD.konfirmasi();
+            userView uV = new userView();
+            uV.setUsername(this.getUsername());
+            uV.setLevel("user");
+            uV.setVisible(true);            
+        }
         this.dispose();
         
     }//GEN-LAST:event_konfirmDetailActionPerformed
 
     private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
         // TODO add your handling code here:
-        cD = new controllerDetail(this);
-        cD.hapus();
-        aV.tampilData();
+        if(this.getLevel().equalsIgnoreCase("admin")){
+            cD = new controllerDetail(this);
+            cD.hapus();
+            aV.tampilData();
+            aV.setUsername(this.getUsername());
+            aV.setLevel("admin");
+            aV.setVisible(true);
+            
+        }else if(this.getLevel().equalsIgnoreCase("user")){
+            cD = new controllerDetail(this);
+            cD.hapus();
+            userView uV = new userView();
+            uV.setUsername(this.getUsername());
+            uV.setLevel("user");
+            uV.setVisible(true);            
+        }
         this.dispose();
     }//GEN-LAST:event_hapusButtonActionPerformed
 
@@ -270,7 +335,7 @@ public class detailPesanan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new detailPesanan(aV).setVisible(true);
+                new detailPesanan().setVisible(true);
             }
         });
     }
@@ -339,6 +404,19 @@ public class detailPesanan extends javax.swing.JFrame {
         this.usernameDetail.setText(usernameDetail);
     }
     
+    public void editableKondition(){
+        JOptionPane.showConfirmDialog(null, "Level : "+this.getLevel());
+        if (this.getLevel().equalsIgnoreCase("admin")){
+            idDetail.setEditable(false);
+            usernameDetail.setEditable(false);
+            estimasiDetail.setEditable(false);
+            kategoriDetail.setEditable(false);
+            jenisSabunDetail.setEditable(false);
+            alamatDetail.setEditable(false);
+        }else if (this.getLevel().equalsIgnoreCase("user")){
+            statusDetail.setEditable(false);
+        }
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

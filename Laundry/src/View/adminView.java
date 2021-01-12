@@ -22,6 +22,26 @@ import javax.swing.table.TableColumnModel;
  */
 public class adminView extends javax.swing.JFrame {
     private DefaultTableModel table;
+    private String level;
+    private String userName;
+
+    public String getUsername() {
+        return userName;
+    }
+
+    public void setUsername(String userName) {
+        this.userName = userName;
+    }    
+    
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+    
+    
     /**
      * Creates new form adminView
      */
@@ -224,6 +244,7 @@ public class adminView extends javax.swing.JFrame {
         }
     }
     private void ambilDataTabel(){
+        //JOptionPane.showConfirmDialog(null, this.getLevel());
         int index = daftarPesanan.getSelectedRow();
         String id = String.valueOf(daftarPesanan.getValueAt(index, 0));
         String username = String.valueOf(daftarPesanan.getValueAt(index, 1));
@@ -232,7 +253,7 @@ public class adminView extends javax.swing.JFrame {
         String jenisSabun = String.valueOf(daftarPesanan.getValueAt(index, 4));
         String alamat = String.valueOf(daftarPesanan.getValueAt(index, 5));
         String status = String.valueOf(daftarPesanan.getValueAt(index, 7));
-        detailPesanan dP = new detailPesanan(this);
+        detailPesanan dP = new detailPesanan();
         dP.setIdDetail(id);
         dP.setUsernameDetail(username);
         dP.setEstimasiDetail(estimasiBerat);
@@ -240,7 +261,11 @@ public class adminView extends javax.swing.JFrame {
         dP.setJenisSabunDetail(jenisSabun);
         dP.setAlamatDetail(alamat);
         dP.setStatusDetail(status);
+        dP.setUsername(this.getUsername());
+        dP.setLevel(this.getLevel());
         dP.setVisible(true);
+        dP.editableKondition();
+        this.dispose();
     } 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -25,7 +25,16 @@ public class statusView extends javax.swing.JFrame {
     private static userView uV;
     private DefaultTableModel table;
     private KoneksiDatabase koneksi;
+    private String level;
 
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+    
     
     
     public String getUsername() {
@@ -169,9 +178,7 @@ public class statusView extends javax.swing.JFrame {
 
     private void daftarPesananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daftarPesananMouseClicked
         // TODO add your handling code here:
-        
-        
-        
+        ambilDataTabel();
     }//GEN-LAST:event_daftarPesananMouseClicked
 
     /**
@@ -249,25 +256,29 @@ public class statusView extends javax.swing.JFrame {
         }
     }
 
-//    private void ambilDataTabel(){
-//        int index = daftarPesanan.getSelectedRow();
-//        String id = String.valueOf(daftarPesanan.getValueAt(index, 0));
-//        String username = String.valueOf(daftarPesanan.getValueAt(index, 1));
-//        String estimasiBerat = String.valueOf(daftarPesanan.getValueAt(index, 2));
-//        String kategori = String.valueOf(daftarPesanan.getValueAt(index, 3));
-//        String jenisSabun = String.valueOf(daftarPesanan.getValueAt(index, 4));
-//        String alamat = String.valueOf(daftarPesanan.getValueAt(index, 5));
-//        String status = String.valueOf(daftarPesanan.getValueAt(index, 7));
-//        detailPesanan dP = new detailPesanan(this);
-//        dP.setIdDetail(id);
-//        dP.setUsernameDetail(username);
-//        dP.setEstimasiDetail(estimasiBerat);
-//        dP.setKategoriDetail(kategori);
-//        dP.setJenisSabunDetail(jenisSabun);
-//        dP.setAlamatDetail(alamat);
-//        dP.setStatusDetail(status);
-//        dP.setVisible(true);
-//    }     
+    private void ambilDataTabel(){
+        int index = daftarPesanan.getSelectedRow();
+        String id = String.valueOf(daftarPesanan.getValueAt(index, 0));
+        String username = String.valueOf(daftarPesanan.getValueAt(index, 1));
+        String estimasiBerat = String.valueOf(daftarPesanan.getValueAt(index, 2));
+        String kategori = String.valueOf(daftarPesanan.getValueAt(index, 3));
+        String jenisSabun = String.valueOf(daftarPesanan.getValueAt(index, 4));
+        String alamat = String.valueOf(daftarPesanan.getValueAt(index, 5));
+        String status = String.valueOf(daftarPesanan.getValueAt(index, 7));
+        detailPesanan dP = new detailPesanan();
+        dP.setIdDetail(id);
+        dP.setUsernameDetail(username);
+        dP.setEstimasiDetail(estimasiBerat);
+        dP.setKategoriDetail(kategori);
+        dP.setJenisSabunDetail(jenisSabun);
+        dP.setAlamatDetail(alamat);
+        dP.setStatusDetail(status);
+        dP.setUsername(this.getUsername());
+        dP.setLevel(this.getLevel());
+        dP.setVisible(true);
+        dP.editableKondition();
+        this.dispose();
+    }     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable daftarPesanan;
