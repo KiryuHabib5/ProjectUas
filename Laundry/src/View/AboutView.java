@@ -57,7 +57,6 @@ public class AboutView extends javax.swing.JFrame {
         jLabel2.setText("Nama Pembuat Aplikasi :");
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 16)); // NOI18N
-        jLabel3.setText("Email : agung.hamdani18175@student.unsika.ac.id");
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 16)); // NOI18N
         jLabel5.setText("Puspa Nurfahira Setiadi - 18178");
