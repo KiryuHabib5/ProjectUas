@@ -415,6 +415,8 @@ public class detailPesanan extends javax.swing.JFrame {
             alamatDetail.setEditable(false);
         }else if (this.getLevel().equalsIgnoreCase("user")){
             statusDetail.setEditable(false);
+            kategoriDetail.setEditable(false);
+            jenisSabunDetail.setEditable(false);
         }
     }
     
